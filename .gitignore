@@ -1,2 +1,7 @@
 node_modules/**/**
 dist/**/**/**
+index.ts
+index_.js
+.gitignore
+_)tsconfig.json
+_index.js
