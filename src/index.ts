@@ -1,3 +1,3 @@
-import { ReverseProxy } from './ReverseProxy';
+import { ReverseProxy } from './ReverseProxy'
 
-const p :ReverseProxy = new ReverseProxy()
+const p   : ReverseProxy = new ReverseProxy()

@@ -1,7 +1,11 @@
 node_modules/**/**
 dist/**/**/**
-index.ts
 index_.js
 .gitignore
 _)tsconfig.json
 _index.js
+vscode-ts-node-debugging/**/**/**
+.eslint.json
+eslint.json
+.vscode
+vscode-ts-node-debugging

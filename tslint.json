@@ -1,18 +1,7 @@
 {
-    "defaultSeverity": "error",
-    "linterOptions": {
-
-        "exclude": [
-            ""
-        ]
-    },
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
+    "defaultSeverity": "warn",
     "rules": {
         "semicolon": false,
         "no-console": false
-    },
-    "rulesDirectory": [],
+    }
 }

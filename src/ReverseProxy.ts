@@ -6,7 +6,6 @@ import { HeadersTransformer } from './HeadersTransformer';
 export class ReverseProxy {
     public static readonly PORT: number = 81
     public static readonly HOST: string = "browserleaks.com";
-    private httpsSender: https.Agent
     private httpListener: http.Server
     private port: string | number
     private remoteUrl: string
@@ -14,17 +13,19 @@ export class ReverseProxy {
     constructor() {
         this.config()
         this.startServer()
+        //console.debug(this.httpListener.address());
     }
 
     private config(): void {
         this.port = process.env.PORT || process.argv[2] || ReverseProxy.PORT;
         this.remoteUrl = process.env.REMOTE_HOST || process.argv[3] || ReverseProxy.HOST;
-        console.log(this.remoteUrl)
+       // console.group(this.remoteUrl)
     }
 
     private startServer(): void {
         this.httpListener = http.createServer();
-        this.httpListener.listen(this.port).on("request", this.httpRequestHandler);
+        this.httpListener.listeners("get")
+        this.httpListener.listen(this.port).on("request",(req,res) => this.httpRequestHandler(req, res));
     }
     private httpRequestHandler(cliReq : http.IncomingMessage, cliRes:http.ServerResponse)  :void {
         const remoteReqHeaders = HeadersTransformer.fromIncomingToOutgoing(cliReq.headers, this.remoteUrl)
@@ -33,12 +34,21 @@ export class ReverseProxy {
 
         //console.log(JSON.stringify(options),[13],String.fromCharCode(13))
 
+        const options:object = {
+            //headers: remoteReqHeaders,
+            "method": cliReq.method,
+            "path": cliReq.url,
+            "host" : this.remoteUrl,
+            "headers": remoteReqHeaders
+        }
+
+
         https.get({
             //headers: remoteReqHeaders,
             method: cliReq.method,
             path: cliReq.url,
-            host: "browserleaks.com"
-        }, (remoteRes: http.IncomingMessage) =>  {
+            host}
+            , (remoteRes: http.IncomingMessage) =>  {
             let body: Number[] = [];
 
             remoteRes.on("data", (data) => {
