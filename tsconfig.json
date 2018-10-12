@@ -17,7 +17,8 @@
     /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "sourceMap": true,
     /* Generates corresponding '.map' file. */
-    // "outFile": "./",                       /* Concatenate and emit output to single file. */
+    "outFile": "./dist/realese/index.js",
+    /* Concatenate and emit output to single file. */
     "outDir": "dist",
     /* Redirect output structure to the directory. */
     "rootDir": ".\\",
