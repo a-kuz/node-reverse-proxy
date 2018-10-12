@@ -1,0 +1,1 @@
+{"version":3,"file":"HeadersTransformer.d.ts","sourceRoot":"","sources":["../src/HeadersTransformer.ts"],"names":[],"mappings":";AAAA,OAAO,EAAC,mBAAmB,EAAE,mBAAmB,EAAC,MAAM,MAAM,CAAA;AAE7D,qBAAa,kBAAkB;IAC3B,gBAAuB,aAAa,EAAE,MAAM,EAAE,CAUxC;WAEQ,sBAAsB,CAAC,aAAa,EAAE,mBAAmB,EAAE,QAAQ,EAAC,MAAM,GAAG,mBAAmB;CAMjH"}

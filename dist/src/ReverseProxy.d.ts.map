@@ -1,0 +1,1 @@
+{"version":3,"file":"ReverseProxy.d.ts","sourceRoot":"","sources":["../../src/ReverseProxy.ts"],"names":[],"mappings":"AAKA,qBAAa,YAAY;IACrB,gBAAuB,IAAI,EAAE,MAAM,CAAK;IACxC,gBAAuB,IAAI,EAAE,MAAM,CAAsB;IACzD,OAAO,CAAC,YAAY,CAAa;IACjC,OAAO,CAAC,IAAI,CAAiB;IAC7B,OAAO,CAAC,SAAS,CAAQ;;IAQzB,OAAO,CAAC,MAAM;IAMd,OAAO,CAAC,WAAW;IAInB,OAAO,CAAC,kBAAkB;CAqF7B"}
