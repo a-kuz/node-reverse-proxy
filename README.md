@@ -19,7 +19,7 @@
 ### Advandced
 You can use injecton for replace pages / scripts content using public field spyFunction:
 
-`import { ReverseProxy } from './ReverseProxy'`
+`import { ReverseProxy } from "./ReverseProxy"`
 
     const p: ReverseProxy = new ReverseProxy()
     p.spyFunction = (strBody: string): string => strBody.replace(/\<(\/?)p\>/,"<$1h1>")`
