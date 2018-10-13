@@ -1,4 +1,4 @@
-### Usage
+# Usage
 
 1. Ensure you Node.js installed. [See](https://nodejs.org/en/download/)
 
@@ -12,19 +12,20 @@
 
 6. You can use command line parameters on ENV variables to set remote url and local port, see sources.
 
-#### Example:
+# Example:
 - Run `npm start yandex.ru 82`
 - Browse [http://localhost:82](http://localhost:82)
 
-### Advandced
+# Advandced
 You can use injecton for replace pages / scripts content using public field spyFunction:
 
-`import { ReverseProxy } from "./ReverseProxy"`
+    import { ReverseProxy } from "./ReverseProxy"
 
     const p: ReverseProxy = new ReverseProxy()
     p.spyFunction = (strBody: string): string => strBody.replace(/\<(\/?)p\>/,"<$1h1>")`
+    
 This code replaces all `<p>` tags to `<h1>` tags :)
 
-### License
+# License
 
 [The MIT License](LICENSE).
