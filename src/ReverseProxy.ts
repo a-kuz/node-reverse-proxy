@@ -34,7 +34,6 @@ export class ReverseProxy {
     private httpRequestHandler(cliReq : IncomingMessage, cliRes:http.ServerResponse)  :void {
         const remoteReqHeaders = HeadersTransformer.fromReqest(cliReq.headers, this.remoteUrl)
         const options: https.RequestOptions = {
-            //headers: remoteReqHeaders,
             "method": cliReq.method,
             "path": cliReq.url,
             "host" : this.remoteUrl,
@@ -51,7 +50,7 @@ export class ReverseProxy {
             remoteRes.on("data", (data: number[]) => {
                 console.debug("   + chunk, length: " + data.length)
                 totalLength += data.length
-                //Buffer.from(data)
+                
                 if (body) {
                     body = [...body, ...data]
                 }
