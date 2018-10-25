@@ -89,8 +89,6 @@ export class ReverseProxy {
             this.processTextResponse(cliRes, pureBody.toString('utf8'), resHeaders)
         }
         else {
-            // resHeaders["content-type"] =
-            //     remoteRes.headers["content-type"]
             resHeaders["content-encoding"] =
                 "none"||remoteResHeaders["content-encoding"]
             cliRes.writeHead(200, resHeaders)
